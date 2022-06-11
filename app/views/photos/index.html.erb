@@ -1,0 +1,19 @@
+<%= link_to "ログアウト", '#' %>
+
+<h1>写真一覧</h1>
+
+<%= link_to "写真アップロード", new_photo_path %>
+
+<div style="display: flex; flex-wrap: wrap">
+  <% @photos.each do |photo| %>
+    <div class="card">
+      <%= image_tag photo.image_path, class: "card-img" %>
+      <div class="card-content">
+        <h1 class="card-title"><%= photo.title %></h1>
+      </div>
+      <div class="card-link">
+        <a href="#">ツイートする</a>
+      </div>
+    </div>
+  <% end %>
+</div>
