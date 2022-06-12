@@ -15,4 +15,10 @@ class ApplicationController < ActionController::Base
       redirect_to login_path
     end
   end
+
+  # ログインしているユーザを返す
+  # @return [User]
+  def current_user
+    @current_user ||= User.find(session[:user_id])
+  end
 end

@@ -2,7 +2,7 @@ class PhotosController < ApplicationController
   before_action :login_check, only: [:index, :new]
 
   def index
-    @photos = Photo.all
+    @photos = current_user.photos.order(created_at: :desc, id: :desc)
   end
 
   def new
