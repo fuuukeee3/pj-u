@@ -1,3 +1,28 @@
 <%= button_to "ログアウトする", logout_path, method: :delete %>
 
 <h1>写真アップロード画面</h1>
+
+<% if @photo.errors.any? %>
+  <div class="alert alert-warning">
+    <ul>
+      <% @photo.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+    </ul>
+  </div>
+<% end %>
+
+<%= form_with model: @photo do |f| %>
+  <div>
+    <%= f.label :title, "タイトル" %>
+    <%= f.text_field :title %>
+  </div>
+
+  <div>
+    <%= f.label :image_file, "画像ファイル" %>
+    <%= f.file_field :image_file %>
+  </div>
+
+  <%= f.submit "アップロード" %>
+  <%= link_to "キャンセル", photos_path %>
+<% end %>

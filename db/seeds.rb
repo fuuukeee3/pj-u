@@ -9,6 +9,6 @@ user = User.first
 (1..3).each do |i|
   user.photos.create!(
     title: "サンプル写真#{i}",
-    image_path: "uploads/sample#{i}.png"
+    image_file: "uploads/sample#{i}.png"
   )
 end

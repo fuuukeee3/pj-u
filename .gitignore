@@ -68,3 +68,7 @@ yarn-debug.log*
 
 # Ignore master key for decrypting credentials and more.
 /config/master.key
+
+# 画像保存先のディレクトリはサンプル画像以外はgit管理しない
+/app/assets/images/uploads/*
+!/app/assets/images/uploads/sample*

@@ -7,7 +7,7 @@
 <div style="display: flex; flex-wrap: wrap">
   <% @photos.each do |photo| %>
     <div class="card">
-      <%= image_tag photo.image_path, class: "card-img" %>
+      <%= image_tag photo.image_file, class: "card-img" %>
       <div class="card-content">
         <h1 class="card-title"><%= photo.title %></h1>
       </div>

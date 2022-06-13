@@ -33,5 +33,13 @@ module PjU
 
     # Don't generate system test files.
     config.generators.system_tests = nil
+
+    config.i18n.default_locale = :ja
+
+    config.time_zone = 'Tokyo'
+    config.active_record.default_timezone = :local
+
+    # バリデーションエラーの際に、field_with_errorsタグを挿入しない
+    config.action_view.field_error_proc = Proc.new { |html_tag, instance| html_tag }
   end
 end
