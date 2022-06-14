@@ -2,6 +2,13 @@
 
 ## 実行方法
 
+プロジェクトのダウンロード
+```
+cd workdir
+git clone git@github.com:fuuukeee3/pj-u.git
+cd pj-u
+```
+
 環境変数の設定
 ```
 export UNIFA_CLIENT_ID={CLIENT_ID}
@@ -18,3 +25,9 @@ bin/rails db:seed
 ```
 bin/rails s
 ```
+
+ログイン可能なテストユーザ  
+user1のみサンプル画像登録済み。
+- user1/pass1
+- user2/pass2
+- user3/pass3
