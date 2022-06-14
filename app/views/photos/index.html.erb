@@ -16,9 +16,12 @@
       <div class="card-content">
         <h1 class="card-title"><%= photo.title %></h1>
       </div>
-      <div class="card-link">
-        <a href="#">ツイートする</a>
-      </div>
+      <% if session[:access_token] %>
+        <div class="card-link">
+          <%#= button_to "ツイートする", tweets_path(tweet: { title: photo.title, image_file: photo.image_file }), method: :post %>
+          <%= button_to "ツイートする", tweets_path(photo_id: photo.id), method: :post %>
+        </div>
+      <% end %>
     </div>
   <% end %>
 </div>

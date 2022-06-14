@@ -21,7 +21,7 @@ class OauthController < ApplicationController
 
     # アクセストークンの取得
     res = Net::HTTP.post_form(
-      URI.parse('https://arcane-ravine-29792.herokuapp.com/oauth/token'),
+      URI.parse("https://arcane-ravine-29792.herokuapp.com/oauth/token"),
       {
         "code" => auth_code,
         "client_id" => ENV["UNIFA_CLIENT_ID"],
