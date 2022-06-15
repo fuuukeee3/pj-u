@@ -11,6 +11,4 @@ class TweetsController < ApplicationController
 
     redirect_to photos_path
   end
-
-  private
 end
