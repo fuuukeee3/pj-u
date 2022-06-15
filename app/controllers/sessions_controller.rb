@@ -14,7 +14,7 @@ class SessionsController < ApplicationController
     # ログイン処理を行う
     user = User.find_by(
       user_id: params[:user_id],
-      password_hash: Digest::SHA256.hexdigest(params[:password])
+      password_digest: Digest::SHA256.hexdigest(params[:password])
     )
 
     if user
