@@ -1,20 +1,18 @@
 class SessionsController < ApplicationController
   def new
+    @login = Login.new
   end
 
   def create
-    errors = []
-    errors << "ユーザーIDを入力してください" if params[:user_id].empty?
-    errors << "パスワードを入力してください" if params[:password].empty?
-    if errors.present?
-      flash.now[:alert] = errors.join(",")
+    @login = Login.new(user_id: params[:login][:user_id], password: params[:login][:password])
+    unless @login.valid?
       return render :new
     end
 
     # ログイン処理を行う
     user = User.find_by(
-      user_id: params[:user_id],
-      password_digest: Digest::SHA256.hexdigest(params[:password])
+      user_id: @login.user_id,
+      password_digest: Digest::SHA256.hexdigest(@login.password)
     )
 
     if user
